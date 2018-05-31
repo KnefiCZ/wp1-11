@@ -1,24 +1,26 @@
 <?php
   $gear = filter_input(INPUT_POST, 'gear');
   $submit = filter_input(INPUT_POST, 'submit');
-
-  if (($submit != NULL) && ($gear == 1)) {
-    echo "Můžeš jet 0 až 20 Km/h." ;
-  }
-  elseif ($gear == 2) {
-    echo "Můžeš jet 20 až 40 Km/h." ;
-  }
-  elseif ($gear == 3) {
-    echo "Můžeš jet 40 až 60 Km/h." ;
-  }
-  elseif ($gear == 4) {
-    echo "Můžeš jet 60 až 80 Km/h." ;
-  }
-  elseif ($gear == 5) {
-    echo "Můžeš jet až do rychlosti 160 Km/h." ;
-  }
-  else {
-    echo "Nemáš zařazeno!!" ;
+if ($submit != NULL)
+  switch ($gear) {
+    case '1':
+      echo "Můžeš jet 0 až 20 Km/h." ;
+      break;
+    case '2':
+      echo "Můžeš jet 20 až 40 Km/h." ;
+        break;
+    case '3':
+      echo "Můžeš jet 40 až 60 Km/h." ;
+          break;
+    case '4':
+      echo "Můžeš jet 60 až 80 Km/h." ;
+            break;
+    case '5':
+      echo "Můžeš jet až do rychlosti 160 Km/h." ;
+        break;
+    default:
+      echo "Nemáš zařazeno!!" ;
+      break;
   }
  ?>
 
